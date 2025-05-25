@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Term Sheet for the Investment of Love</title>
+  <style>
+    body {
+      background: #ffeef5;
+      font-family: "Georgia", serif;
+      color: #4b2e2e;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff7f9;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
+      border: 1px solid #f7c2d5;
+    }
+    h1 {
+      text-align: center;
+      color: #a64b6a;
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #d7a3b5;
+      border-radius: 5px;
+      background: #fff0f5;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 2rem;
+      background: #d1789c;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ba5d85;
+    }
+    .closing {
+      margin-top: 2rem;
+      font-style: italic;
+      text-align: center;
+      color: #6b2b44;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Term Sheet for the Investment of Love</h1>
+    <form>
+      <label for="investor">Investor Name</label>
+      <input type="text" id="investor" name="investor" placeholder="Sir's Full Name" required/>
+
+      <label for="company">Company</label>
+      <input type="text" id="company" name="company" value="Bubu Inc." readonly/>
+
+      <label for="investment">Investment Description</label>
+      <textarea id="investment" name="investment" rows="3" placeholder="e.g. Affection, Cheesecakes, Netflix privileges"></textarea>
+
+      <label for="valuation">Valuation</label>
+      <input type="text" id="valuation" name="valuation" placeholder="e.g. Incalculable, but modestly priceless"/>
+
+      <label for="use">Use of Proceeds</label>
+      <textarea id="use" name="use" rows="3" placeholder="e.g. Dates, cuddles, snacks"></textarea>
+
+      <label for="conditions">Conditions Precedent</label>
+      <textarea id="conditions" name="conditions" rows="3" placeholder="e.g. Must say ‘I love you’ every day"></textarea>
+
+      <label for="law">Governing Law</label>
+      <input type="text" id="law" name="law" value="Law of Mutual Goofiness" readonly/>
+
+      <button type="submit">Submit Term Sheet</button>
+    </form>
+    <div class="closing">
+      Thank you for your proposal. This Term Sheet shall now be reviewed over a shot of gin.
+    </div>
+  </div>
+</body>
+</html>
