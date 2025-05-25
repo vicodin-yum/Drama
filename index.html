@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grievance Registry of Insolent Pleas & Entreaties</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background: radial-gradient(circle at center, rgba(255,192,203,0.1), rgba(26,0,31,1)), url('https://www.transparenttextures.com/patterns/old-mathematics.png');
+      background-size: cover;
+      color: #ffc0cb;
+      height: 100%;
+      overflow: hidden;
+    }
+    .loader-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #1a001f;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .loader-text {
+      font-size: 1.2rem;
+      color: #ffb3d9;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+
+    main {
+      display: none;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #ff66b2;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #ffaad4;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: rgba(42, 0, 47, 0.8);
+      border: 1px solid #ff99cc;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 420px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
+    }
+
+    input, textarea, select, button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      background-color: #3b003f;
+      color: #ffe6f0;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="range"] {
+      appearance: none;
+      background: #ff66b2;
+      height: 6px;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 5px 0;
+    }
+
+    button {
+      background-color: #ff66b2;
+      color: #1a001f;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff3385;
+    }
+
+    .note {
+      margin-top: 25px;
+      font-style: italic;
+      color: #ffb3d9;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-screen" id="loader">
+    <div class="loader-text">Preparing parchment for Sir, appeal to His mercy…</div>
+  </div>
+
+  <main id="main-content">
+    <h1>Grievance Registry of Insolent Pleas & Entreaties</h1>
+    <p>Please file your baseless complaint below:</p>
+
+    <form id="grievance-form" action="https://formsubmit.co/your-email@example.com" method="POST">
+      <input type="text" name="name" placeholder="Who dares speak? (optional)" />
+      <textarea name="grievance" placeholder="Describe your alleged suffering..." required></textarea>
+
+      <label for="severity">Severity of grievance (1 = dramatic, 10 = Shakespearean tragedy):</label>
+      <input type="range" name="severity" min="1" max="10" />
+
+      <p style="margin-top: 20px;">What reparations do you feel entitled to?</p>
+      <label><input type="checkbox" name="reparations" value="Two shots of Baileys" /> Two shots of Baileys</label>
+      <label><input type="checkbox" name="reparations" value="Being told you are right" /> Being told you are right</label>
+      <label><input type="checkbox" name="reparations" value="Make me watch Invincible with no prejudice" /> Make me watch Invincible with no prejudice</label>
+      <label><input type="checkbox" name="reparations" value="Ask me to share something horribly embarrassing" /> Ask me to share something horribly embarrassing</label>
+      <label><input type="checkbox" name="reparations" value="A formal written apology" /> A formal written apology</label>
+
+      <input type="hidden" name="_captcha" value="false" />
+      <button type="submit">Submit for Her Grace’s Judgment</button>
+    </form>
+
+    <p class="note">
+      Thank you for your time. The complaint will most probably be auto-denied since I'm a bloody peach.
+    </p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }, 2500);
+    });
+
+    document.getElementById('grievance-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 },
+        colors: ['#ff66b2', '#ffc0cb', '#ffe6f0']
+      });
+
+      setTimeout(() => {
+        e.target.submit();
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
